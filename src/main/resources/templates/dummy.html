@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="table-responsive">
+            <a href="/create">Create</a>
+            <table class="table align-middle">
+                <tr>
+                    <th>NIK</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Foto</th>
+                    
+                </tr>
+                <tr th:each="godummy:${goDummy}">
+                    <td th:text="${godummy.id}"></td>
+                    <td th:text="${#calendars.format(godummy.tanggal,'dd-MMM-yyyy')}"></td>
+                    <td th:text="${godummy.foto}"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
