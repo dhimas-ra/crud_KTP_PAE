@@ -13,13 +13,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
               crossorigin="anonymous">
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/data">KTP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
         <div class="container my-5">
             <h3>Tambah Data</h3>
             <div class="card">
                 <div class="card-body">
                     <div class="col-md-10">
-                        <form action="#" th:action="@{/databaru}" th:object="${data}" method="post">
+                        <form action="#" th:action="@{/databaru}" th:object="${data}" method="post" enctype="multipart/form-data">
                             <div class="row">
+                                <div class="form-group col-md-8">
+                                    <label for="id" class="col-form-label">ID</label> <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="id">
+                                </div>
                                 <div class="form-group col-md-8">
                                     <label for="noktp" class="col-form-label">No. KTP</label> <input type="text" th:field="*{noktp}" class="form-control" id="noktp" placeholder="No. KTP">
                                 </div>
@@ -27,7 +66,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                     <label for="nama" class="col-form-label">Nama</label> <input type="text" th:field="*{nama}" class="form-control" id="nama" placeholder="Nama">
                                 </div>
                                 <div class="form-group col-md-8">
-                                    <label for="datepicker-disabled-days" class="col-form-label">Tanggal Lahir</label> <input type="date" th:field="*{tgllahir}" class="form-control" id="tgllahir" placeholder="Tanggal Lahir">
+                                    <label for="datepicker-disabled-days" class="col-form-label">Tanggal Lahir</label> <input type="date" th:field="*{tgllahir}" class="form-control" id="tgllahir" name="tgllahir" placeholder="Tanggal Lahir">
                                 </div>
                                 <div class="form-group col-md-8">
                                     <label for="gender" class="col-form-label">Jenis Kelamin</label> <input type="text" th:field="*{gender}" class="form-control" id="gender" placeholder="Jenis Kelamin">
